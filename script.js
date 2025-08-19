@@ -1,9 +1,9 @@
 // hamburger menu
-document.getElementById('hamburger-menu').addEventListener('click', function() {
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.getElementById('hamburger-menu');
     const sidebar = document.getElementById('sidebar');
-    if (sidebar.style.width === '250px') {
-        sidebar.style.width = '0';
-    } else {
-        sidebar.style.width = '250px';
-    }
+
+    hamburger.addEventListener('click', function() {
+        sidebar.classList.toggle('open');
+    });
 });

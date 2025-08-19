@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
 
+/* title */
 h1 {
     font-family: "UnifrakturCook", cursive;
     font-size: 7vw;
@@ -7,48 +8,73 @@ h1 {
     /* text-shadow: 2px 2px 4px gray; */
 }
 
-.bighr {
-    height: 3px;
-    background-color: black;
+/* hamburger menu */
+.hamburger-menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 1001; 
+    background: none;
     border: none;
 }
-
-.hamburger-menu {
-    cursor: pointer;
-    padding:15px;
-    .bar{
-        width: 25px;
-        height: 3px;
-        background-color: black;
-        margin: 5px 0;
-        transition: 0.4s;
-    }
+.hamburger-menu .bar {
+    width: 100%;
+    height: 3px;
+    background-color: grey;
+    border-radius: 5px;
+    transition: all 0.3s ease;
 }
-
-.sidebar{
-    height:100%;
-    width:0;
+.sidebar {
+    height: 100%;
+    width: 0;
     position: fixed;
-    z-index: 1;
     top: 0;
-    left: 0;
-    background-color: beige;
-    overflow-x: hidden;
-    transition: 0.5s;
+    right: 0;
+    background-color: black;
     padding-top: 60px;
+    transition: 0.5s;
+    overflow-x: hidden;
+    z-index: 1000;
 }
 .sidebar a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
+    color: grey;
     display: block;
     transition: 0.3s;
+}
+.sidebar a:hover {
+    color: white;
 }
 .sidebar.open {
     width: 250px;
 }
 
+/* navbar */
+.bighr {
+    height: 3px;
+    background-color: black;
+    border: none;
+}
+.navbar a {
+    padding: 0 20px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+a:hover {
+    color: rgb(171, 171, 171);
+}
+
+/* articles */
 .articles{
     display: grid;
     grid-template-columns: 2fr 1fr;
