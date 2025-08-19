@@ -19,187 +19,87 @@
             <a href="#">SUBJECT2</a>
             <a href="#">SUBJECT3</a>
             <a href="#">SUBJECT4</a>
+            <a href="#" id="add-article-link" class="add-article-link">ADD ARTICLE</a>
         </div>
 
-        <h1 align="center">The Dialect</h1>
+        <div id="article-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Submit New Article</h2>
+                <form id="article-form">
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="author-name">Author Name:</label>
+                        <input type="text" id="author-name" name="author-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date:</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="category">Category:</label>
+                        <select id="category" name="category" required>
+                            <option value="">Select a category</option>
+                            <option value="POLITICS">POLITICS</option>
+                            <option value="SUBJECT2">SUBJECT2</option>
+                            <option value="SUBJECT3">SUBJECT3</option>
+                            <option value="SUBJECT4">SUBJECT4</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="headline">Headline:</label>
+                        <input type="text" id="headline" name="headline" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description:</label>
+                        <textarea id="description" name="description" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="content">Article Content:</label>
+                        <textarea id="content" name="content" rows="10" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="image-url">Image URL:</label>
+                        <input type="url" id="image-url" name="image-url" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit Article</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- firebase sdk -->
+        <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+        <script src="firebase-config.js"></script>
+
+        <a href="#" class="title" data-category="all">
+            <h1 align="center">The Dialect</h1>
+        </a>
+        
         <div class="navbar" align="center">
             <hr class="bighr">
-            <a href="#">POLITICS</a>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="#">SUBJECT2</a>
+            <a href="#" class="category-filter" data-category="POLITICS">POLITICS</a>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="#">SUBJECT3</a>
+            <a href="#" class="category-filter" data-category="SUBJECT2">SUBJECT2</a>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="#">SUBJECT4</a>
+            <a href="#" class="category-filter" data-category="SUBJECT3">SUBJECT3</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="#" class="category-filter" data-category="SUBJECT4">SUBJECT4</a>
             &nbsp;
             <hr>
         </div>
 
-        <!-- top 7 most recent articles should be big like this -->
+        <!-- top 7 most recent articles from database -->
         <div class="articles">
-            <div class="recent-articles-column">
-                <div class="recentDiv">
-                    <div class="recentText">
-                        <h2 class="recentHeading">Here is the headline for this article</h2>
-                        <p class="recentDescription">Here is the text for this article. Here should be a short description and you click on the article for more.</p>
-                        <p class="recentAuthor">By Sarah Razack</p>
-                        <p class="recentDate">8/18/2025</p>
-                    </div>
-                    <div class="vertical-line"></div>
-                    <img src="img.jpg">
-                    <div class="vertical-line"></div>
-                </div>
-                <div class="recentDiv">
-                    <div class="recentText">
-                        <h2 class="recentHeading">Here is the headline for this article</h2>
-                        <p class="recentDescription">Here is the text for this article. Here should be a short description and you click on the article for more.</p>
-                        <p class="recentAuthor">By Sarah Razack</p>
-                        <p class="recentDate">8/18/2025</p>
-                    </div>
-                    <div class="vertical-line"></div>
-                    <img src="img.jpg">
-                    <div class="vertical-line"></div>
-                </div>
-                <div class="recentDiv">
-                    <div class="recentText">
-                        <h2 class="recentHeading">Here is the headline for this article</h2>
-                        <p class="recentDescription">Here is the text for this article. Here should be a short description and you click on the article for more.</p>
-                        <p class="recentAuthor">By Sarah Razack</p>
-                        <p class="recentDate">8/18/2025</p>
-                    </div>
-                    <div class="vertical-line"></div>
-                    <img src="img.jpg">
-                    <div class="vertical-line"></div>
-                </div>
-                <div class="recentDiv">
-                    <div class="recentText">
-                        <h2 class="recentHeading">Here is the headline for this article</h2>
-                        <p class="recentDescription">Here is the text for this article. Here should be a short description and you click on the article for more.</p>
-                        <p class="recentAuthor">By Sarah Razack</p>
-                        <p class="recentDate">8/18/2025</p>
-                    </div>
-                    <div class="vertical-line"></div>
-                    <img src="img.jpg">
-                    <div class="vertical-line"></div>
-                </div>
-                <div class="recentDiv">
-                    <div class="recentText">
-                        <h2 class="recentHeading">Here is the headline for this article</h2>
-                        <p class="recentDescription">Here is the text for this article. Here should be a short description and you click on the article for more.</p>
-                        <p class="recentAuthor">By Sarah Razack</p>
-                        <p class="recentDate">8/18/2025</p>
-                    </div>
-                    <div class="vertical-line"></div>
-                    <img src="img.jpg">
-                    <div class="vertical-line"></div>
-                </div>
-                <div class="recentDiv">
-                    <div class="recentText">
-                        <h2 class="recentHeading">Here is the headline for this article</h2>
-                        <p class="recentDescription">Here is the text for this article. Here should be a short description and you click on the article for more.</p>
-                        <p class="recentAuthor">By Sarah Razack</p>
-                        <p class="recentDate">8/18/2025</p>
-                    </div>
-                    <div class="vertical-line"></div>
-                    <img src="img.jpg">
-                    <div class="vertical-line"></div>
-                </div>
-                <div class="recentDiv">
-                    <div class="recentText">
-                        <h2 class="recentHeading">Here is the headline for this article</h2>
-                        <p class="recentDescription">Here is the text for this article. Here should be a short description and you click on the article for more.</p>
-                        <p class="recentAuthor">By Sarah Razack</p>
-                        <p class="recentDate">8/18/2025</p>
-                    </div>
-                    <div class="vertical-line"></div>
-                    <img src="img.jpg">
-                    <div class="vertical-line"></div>
-                </div>
+            <div class="recent-articles-column" id="recent-articles-container">
             </div>
         
         <!-- the rest of the articles should be small like these -->
-            <div class="small-articles-column">
-                <div class="smallDiv">
-                    <div class="smallText">
-                        <h2 class="smallHeading">This is one of the headlines for a past article</h2>
-                        <p class="smallDescription">Here is the text for this article. Here should be a short description and you click on the article for more.</p>
-                        <p class="smallAuthor">By Sarah Razack</p>
-                        <p class="smallDate">8/18/2025</p>
-                    </div>
-                    <img src="img.jpg">
-                </div>
-                <hr>
-                <div class="smallDiv">
-                    <div class="smallText">
-                        <h2 class="smallHeading">This is one of the headlines for a past article</h2>
-                        <p class="smallDescription">Here is the text for this article. Here should be a short description and you click on the article for more.</p>
-                        <p class="smallAuthor">By Sarah Razack</p>
-                        <p class="smallDate">8/18/2025</p>
-                    </div>
-                    <img src="img.jpg">
-                </div>
-                <hr>
-                <div class="smallDiv">
-                    <div class="smallText">
-                        <h2 class="smallHeading">This is one of the headlines for a past article</h2>
-                        <p class="smallDescription">Here is the text for this article. Here should be a short description and you click on the article for more.</p>
-                        <p class="smallAuthor">By Sarah Razack</p>
-                        <p class="smallDate">8/18/2025</p>
-                    </div>
-                    <img src="img.jpg">
-                </div>
-                <hr>
-                <div class="smallDiv">
-                    <div class="smallText">
-                        <h2 class="smallHeading">This is one of the headlines for a past article</h2>
-                        <p class="smallDescription">Here is the text for this article. Here should be a short description and you click on the article for more.</p>
-                        <p class="smallAuthor">By Sarah Razack</p>
-                        <p class="smallDate">8/18/2025</p>
-                    </div>
-                    <img src="img.jpg">
-                </div>
-                <hr>
-                <div class="smallDiv">
-                    <div class="smallText">
-                        <h2 class="smallHeading">This is one of the headlines for a past article</h2>
-                        <p class="smallDescription">Here is the text for this article. Here should be a short description and you click on the article for more.</p>
-                        <p class="smallAuthor">By Sarah Razack</p>
-                        <p class="smallDate">8/18/2025</p>
-                    </div>
-                    <img src="img.jpg">
-                </div>
-                <hr>
-                <div class="smallDiv">
-                    <div class="smallText">
-                        <h2 class="smallHeading">This is one of the headlines for a past article</h2>
-                        <p class="smallDescription">Here is the text for this article. Here should be a short description and you click on the article for more.</p>
-                        <p class="smallAuthor">By Sarah Razack</p>
-                        <p class="smallDate">8/18/2025</p>
-                    </div>
-                    <img src="img.jpg">
-                </div>
-                <hr>
-                <div class="smallDiv">
-                    <div class="smallText">
-                        <h2 class="smallHeading">This is one of the headlines for a past article</h2>
-                        <p class="smallDescription">Here is the text for this article. Here should be a short description and you click on the article for more.</p>
-                        <p class="smallAuthor">By Sarah Razack</p>
-                        <p class="smallDate">8/18/2025</p>
-                    </div>
-                    <img src="img.jpg">
-                </div>
-                <hr>
-                <div class="smallDiv">
-                    <div class="smallText">
-                        <h2 class="smallHeading">This is one of the headlines for a past article</h2>
-                        <p class="smallDescription">Here is the text for this article. Here should be a short description and you click on the article for more.</p>
-                        <p class="smallAuthor">By Sarah Razack</p>
-                        <p class="smallDate">8/18/2025</p>
-                    </div>
-                    <img src="img.jpg">
-                </div>
-                <hr>
-                <!-- and so on for all articles -->
+            <div class="small-articles-column" id="older-articles-container">
             </div>
         </div>
 
