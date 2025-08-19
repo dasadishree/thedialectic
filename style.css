@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
+
+h1 {
+    font-family: "UnifrakturCook", cursive;
+    font-size: 7vw;
+    margin: 0;
+    /* text-shadow: 2px 2px 4px gray; */
+}
+
+.bighr {
+    height: 3px;
+    background-color: black;
+    border: none;
+}
+
+.hamburger-menu {
+    cursor: pointer;
+    padding:15px;
+    .bar{
+        width: 25px;
+        height: 3px;
+        background-color: black;
+        margin: 5px 0;
+        transition: 0.4s;
+    }
+}
+
+.sidebar{
+    height:100%;
+    width:0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: beige;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+.sidebar.open {
+    width: 250px;
+}
+
+.articles{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px
+}
+.recentDiv{
+    display: flex;
+    align-items: center;
+    .recentText{
+        width: 15vw;
+        padding-left: 5vw;
+    }
+    
+    h2 {
+        font-size: 2vw;
+        margin:0
+    }
+    img {
+        width: 45vw
+    }
+    margin-top: 2vw;
+    p{
+        margin-top: 1vw;
+        margin-bottom: 0
+    }
+
+    .recentDate {
+        margin-top: 0;
+    }
+
+    .vertical-line {
+        height: 25vw; 
+        width: 2px; 
+        background-color: gray;
+        margin-left: 1vw;
+        margin-right: 1vw;
+    }
+}
+.smallDiv{
+    display: flex;
+    align-items: center;
+
+    img{
+        width:10vw;
+        height: 10vw;
+        margin:0.5vw;
+    }
+
+    h2{
+        font-size: 1vw;
+    }
+
+    p{
+        margin: 0.5vw;
+        margin-left: 0vw;
+        font-size: 0.9vw;
+    }
+
+    margin-top: 2vw;
+    padding-right: 5vw
+}
+
