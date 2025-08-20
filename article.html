@@ -3,12 +3,13 @@
     <head>
         <title>Article - The Dialect</title>
         <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/x-icon" href="TD.png">
     </head>
 
     <body>
 
         <a href="index.html" class="title-small" data-category="all">
-            <h1 align="center">The Dialect</h1>
+            <h1 align="center">THE DIALECTIC</h1>
         </a>
         <div class="hamburger-menu" id="hamburger-menu">
             <div class="bar"></div>
@@ -18,11 +19,13 @@
         <hr>
 
         <div class="sidebar" id="sidebar">
-            <a href="#" class="category-filter" data-category="POLITICS">POLITICS</a>
-            <a href="#" class="category-filter" data-category="SUBJECT2">SUBJECT2</a>
-            <a href="#" class="category-filter" data-category="SUBJECT3">SUBJECT3</a>
-            <a href="#" class="category-filter" data-category="SUBJECT4">SUBJECT4</a>
-            <a href="#" id="add-article-link">ADD ARTICLE</a>
+            <a href="#" class="category-filter" data-category="affairs">Affairs</a>
+            <a href="#" class="category-filter" data-category="ideas & philosophy">Ideas & Philosophy</a>
+            <a href="#" class="category-filter" data-category="society">Society</a>
+            <a href="#" class="category-filter" data-category="the review">The Review</a>
+            <a href="#" class="category-filter" data-category="bulletins">Bulletins</a>
+            <a href="#" class="category-filter" data-category="forum">Forum</a>
+            <a href="#" class="add-article-link" id="add-article-link">ADD ARTICLE</a>
         </div>
 
         <!-- modal -->
@@ -47,10 +50,12 @@
                         <label for="category">Category:</label>
                         <select id="category" name="category" required>
                             <option value="">Select a category</option>
-                            <option value="POLITICS">POLITICS</option>
-                            <option value="SUBJECT2">SUBJECT2</option>
-                            <option value="SUBJECT3">SUBJECT3</option>
-                            <option value="SUBJECT4">SUBJECT4</option>
+                            <option value="affairs">Affairs</option>
+                            <option value="ideas & philosophy">Ideas & Philosophy</option>
+                            <option value="society">Society</option>
+                            <option value="the review">The Review</option>
+                            <option value="bulletins">Bulletins</option>
+                            <option value="forum">Forum</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -105,6 +110,8 @@
         </div>
 
         <hr>
+        <p class="shoutout" align="right">Website made by Adishree Das at <a href="https://techfluences.org">Techfluences</a></p>
+
         <script src="article.js"></script>
     </body>
 </html>

@@ -4,6 +4,7 @@
     <head>
         <title>The Dialectic</title>
         <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/x-icon" href="TD.png">
     </head>
 
     <body>
@@ -15,10 +16,12 @@
         </div>
 
         <div class="sidebar" id="sidebar">
-            <a href="#">POLITICS</a>
-            <a href="#">SUBJECT2</a>
-            <a href="#">SUBJECT3</a>
-            <a href="#">SUBJECT4</a>
+            <a href="#" class="category-filter" data-category="affairs">Affairs</a>
+            <a href="#" class="category-filter" data-category="ideas & philosophy">Ideas & Philosophy</a>
+            <a href="#" class="category-filter" data-category="society">Society</a>
+            <a href="#" class="category-filter" data-category="the review">The Review</a>
+            <a href="#" class="category-filter" data-category="bulletins">Bulletins</a>
+            <a href="#" class="category-filter" data-category="forum">Forum</a>
             <a href="#" id="add-article-link" class="add-article-link">ADD ARTICLE</a>
         </div>
 
@@ -43,10 +46,12 @@
                         <label for="category">Category:</label>
                         <select id="category" name="category" required>
                             <option value="">Select a category</option>
-                            <option value="POLITICS">POLITICS</option>
-                            <option value="SUBJECT2">SUBJECT2</option>
-                            <option value="SUBJECT3">SUBJECT3</option>
-                            <option value="SUBJECT4">SUBJECT4</option>
+                            <option value="affairs">Affairs</option>
+                            <option value="ideas & philosophy">Ideas & Philosophy</option>
+                            <option value="society">Society</option>
+                            <option value="the review">The Review</option>
+                            <option value="bulletins">Bulletins</option>
+                            <option value="forum">Forum</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -76,21 +81,24 @@
         <script src="firebase-config.js"></script>
 
         <a href="#" class="title" data-category="all">
-            <h1 align="center">The Dialectic</h1>
+            <h1 align="center">THE DIALECTIC</h1>
         </a>
         
         <div class="navbar" align="center">
             <hr class="bighr">
+            <a href="#" class="category-filter" data-category="affairs">Affairs</a>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="#" class="category-filter" data-category="POLITICS">POLITICS</a>
+            <a href="#" class="category-filter" data-category="ideas & philosophy">Ideas & Philosophy</a>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="#" class="category-filter" data-category="SUBJECT2">SUBJECT2</a>
+            <a href="#" class="category-filter" data-category="society">Society</a>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="#" class="category-filter" data-category="SUBJECT3">SUBJECT3</a>
+            <a href="#" class="category-filter" data-category="the review">The Review</a>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="#" class="category-filter" data-category="SUBJECT4">SUBJECT4</a>
+            <a href="#" class="category-filter" data-category="bulletins">Bulletins</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="#" class="category-filter" data-category="forum">Forum</a>
             &nbsp;
-            <hr class = "bighr">
+            <hr class="bighr">
         </div>
 
         <!-- top 7 most recent articles from database -->
@@ -103,7 +111,36 @@
             </div>
         </div>
 
-        <hr>
+        <div class="sections">
+            <hr>
+            <h1>The Affairs</h1>
+            <div class="categorized-articles" id="affairs-articles">
+            </div>
+            <hr>
+            <h1>Ideas & Philosophy</h1>
+            <div class="categorized-articles" id="ideas-philosophy-articles">
+            </div>
+            <hr>
+            <h1>Society</h1>
+            <div class="categorized-articles" id="society-articles">
+            </div>
+            <hr>
+            <h1>The Review</h1>
+            <div class="categorized-articles" id="the-review-articles">
+            </div>
+            <hr>
+            <h1>Bulletins</h1>
+            <div class="categorized-articles" id="bulletins-articles">
+            </div>
+            <hr>
+            <h1>Forum</h1>
+            <div class="categorized-articles" id="forum-articles">
+            </div>
+            <hr>
+        </div>
+
+        <p class="shoutout" align="right">Website made by Adishree Das at <a href="https://techfluences.org">Techfluences</a></p>
+
         <script src="script.js"></script>
     </body>
 </html>

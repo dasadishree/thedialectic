@@ -113,7 +113,7 @@ h1{
     padding-bottom: 2px;
 }
 .add-article-link{
-    margin-top: 50vh;
+    margin-top: 40vh;
     margin-left: 1vw;
     margin-right: 1vw;
     border: 2px solid #333;
@@ -422,4 +422,61 @@ h1{
     transition: background-color 0.2s ease;
 }
 
+
+
+
+/* categorized section */
+.categorized-image{
+    width: 15vw;
+    height: 15vw;
+}
+
+.categorized-articles {
+    display: flex;
+    gap: 2vw;
+    padding: 1vw 0;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+
+.categorized-article {
+    width: 15vw;
+    flex-shrink: 0;
+}
+
+.categorized-headline {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    line-height: 1.2;
+}
+
+.categorized-description {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    line-height: 1.4;
+}
+
+.categorized-articles::-webkit-scrollbar {
+    height: 8px;
+}
+
+.categorized-articles::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.categorized-articles::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.categorized-articles::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+.sections{
+    padding:5vw
+}
 

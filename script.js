@@ -3,7 +3,7 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
 // author password (tell sarah to change if she needsa)
-const AUTHOR_PASSWORD = "123abc";
+const AUTHOR_PASSWORD = "123Loveandcyanide";
 
 // Global variables for filtering
 let allArticles = [];
@@ -41,7 +41,7 @@ function setupCategoryFilters() {
     });
 }
 
-// Function to load articles from Firestore
+//firestore load
 async function loadArticles() {
     try {
         const articlesSnapshot = await db.collection('articles')
@@ -54,12 +54,13 @@ async function loadArticles() {
         });
         
         filterAndDisplayArticles(currentCategory);
+        populateCategorizedSections();
     } catch (error) {
         console.error('Error loading articles:', error);
     }
 }
 
-// Function to filter and display articles by category
+// display by category
 function filterAndDisplayArticles(category) {
     let filteredArticles;
     
@@ -184,6 +185,31 @@ function createSmallArticleElement(article) {
     return articleDiv;
 }
 
+// Function to create category article element
+function createCategoryArticleElement(article) {
+    const articleDiv = document.createElement('div');
+    articleDiv.className = 'category-article';
+    articleDiv.style.cursor = 'pointer';
+    
+    articleDiv.innerHTML = `
+        <div class="category-article-content">
+            <h3 class="category-article-headline">${article.headline}</h3>
+            <p class="category-article-description">${article.description}</p>
+            <div class="category-article-meta">
+                <span class="category-article-author">By ${article.authorName}</span>
+                <span class="category-article-date">${formatDate(article.date)}</span>
+            </div>
+        </div>
+    `;
+    
+    // Make article clickable
+    articleDiv.addEventListener('click', function() {
+        window.location.href = `article.html?id=${article.id}`;
+    });
+    
+    return articleDiv;
+}
+
 // format date
 function formatDate(dateString) {
     if (!dateString) return 'Date not available';
@@ -296,4 +322,50 @@ function showMessage(message, type) {
             messageDiv.remove();
         }
     }, 5000);
+}
+
+// Function to populate categorized sections
+function populateCategorizedSections() {
+    const categories = ['affairs', 'ideas & philosophy', 'society', 'the review', 'bulletins', 'forum'];
+    
+    categories.forEach(category => {
+        const containerId = category.replace(/[^a-z]/g, '-') + '-articles';
+        const container = document.getElementById(containerId);
+        
+        if (container) {
+            const categoryArticles = allArticles.filter(article => article.category === category);
+            
+            if (categoryArticles.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: #666; font-style: italic; padding: 2vw;">No articles in this category yet.</p>';
+            } else {
+                container.innerHTML = '';
+                // Only show the 5 most recent articles
+                const recentArticles = categoryArticles.slice(0, 5);
+                recentArticles.forEach(article => {
+                    const articleElement = createCategorizedArticleElement(article);
+                    container.appendChild(articleElement);
+                });
+            }
+        }
+    });
+}
+
+// Function to create categorized article element
+function createCategorizedArticleElement(article) {
+    const articleDiv = document.createElement('div');
+    articleDiv.className = 'categorized-article';
+    articleDiv.style.cursor = 'pointer';
+    
+    articleDiv.innerHTML = `
+        <img class="categorized-image" src="${article.imageUrl || 'img.jpg'}" alt="${article.headline}">
+        <h2 class="categorized-headline">${article.headline}</h2>
+        <p class="categorized-description">${article.description}</p>
+    `;
+    
+    // Make article clickable
+    articleDiv.addEventListener('click', function() {
+        window.location.href = `article.html?id=${article.id}`;
+    });
+    
+    return articleDiv;
 }
