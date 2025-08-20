@@ -1,16 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
+
+body{
+    background-color: white;
+    font-family: "Cormorant Garamond", serif;
+}
+p{
+    font-family: "Cormorant Garamond", serif;
+}
+h2{
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 700;
+}
 
 /* title */
-h1 {
-    font-family: "UnifrakturCook", cursive;
-    font-size: 7vw;
-    margin: 0;
-    /* text-shadow: 2px 2px 4px gray; */
+h1{
+    margin:0
 }
 .title {
     color: black !important;
     text-decoration: none !important;
     cursor: pointer;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 700;
+    font-size: 4vw;
 }
 .title:hover {
     color: black !important;
@@ -66,6 +78,8 @@ h1 {
     color: grey;
     display: block;
     transition: 0.3s;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 700;
 }
 .sidebar a:hover {
     color: white;
@@ -87,6 +101,8 @@ h1 {
     font-weight: bold;
     transition: color 0.3s ease;
     cursor: pointer;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 700;
 }
 .navbar a:hover {
     color: rgb(171, 171, 171);
@@ -215,11 +231,12 @@ h1 {
     display: flex;
     align-items: center;
     margin-top: 2vw;
+    position: relative;
     
     .recentText{
         width: 15vw;
         min-height: 15vw;
-        padding-left: 5vw;
+        margin-left: 5vw;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -300,5 +317,109 @@ h1 {
     .smallAuthor {
         margin-top: auto;
         font-weight: bold;
-    }
+         }
 }
+
+/* article page seperate styles (most r same tho)*/
+.title-small {
+    color: black !important;
+    text-decoration: none !important;
+    cursor: pointer;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 700;
+    font-size: 1vw;
+    margin: 0;
+}
+.title-small:hover {
+    color: black !important;
+    text-decoration: none !important;
+}
+.title-small:visited {
+    color: black !important;
+    text-decoration: none !important;
+}
+.title-small:active {
+    color: black !important;
+    text-decoration: none !important;
+}
+.article-container{
+    margin-top: 10vh;
+    padding-left: 25vw;
+    padding-right: 25vw;
+}
+.article-title{
+    font-size: 3vw;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 700;
+}
+.article-image{
+    width: 50vw;
+}
+.article-date p, .article-author p{
+    margin:0;
+    display: flex;
+    align-items: left !important;
+    font-style: italic;
+    font-size: 2vw;
+    font-weight: bold;
+}
+.article-author {
+    color: grey; 
+    margin:0.5vh
+}
+.article-date {
+    color: grey;
+    margin:0.5vh
+}
+.article-meta {
+    display: flex;
+    gap: 2vw;
+    margin-bottom: 2vw;
+    font-size: 1.2vw;
+}
+.article-category {
+    display: inline-block;
+    background-color: #f0f0f0;
+    padding: 0.3vw 0.8vw;
+    border-radius: 3px;
+    font-size: 1vw;
+    font-weight: bold;
+    color: #333;
+    width: 10vh
+}
+.article-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.article-body {
+    line-height: 1.6;
+    font-size: 1.3vw;
+}
+
+.article-description {
+    font-size: 1.4vw;
+    color: #555;
+    margin-bottom: 2vw;
+    border-left: 3px solid #333;
+    padding-left: 1vw;
+    font-weight: bold;
+}
+
+.article-content {
+    text-align: justify;
+    color: #333;
+}
+
+.article-content p {
+    margin-bottom: 1.5vw;
+}
+
+.recentDiv:hover,
+.smallDiv:hover {
+    background-color: #f9f9f9;
+    transition: background-color 0.2s ease;
+}
+
+

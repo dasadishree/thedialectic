@@ -1,27 +1,31 @@
 <!DOCTYPE html>
-
 <html>
     <head>
-        <title>The Dialectic</title>
+        <title>Article - The Dialect</title>
         <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
-        
+
+        <a href="index.html" class="title-small" data-category="all">
+            <h1 align="center">The Dialect</h1>
+        </a>
         <div class="hamburger-menu" id="hamburger-menu">
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
         </div>
+        <hr>
 
         <div class="sidebar" id="sidebar">
-            <a href="#">POLITICS</a>
-            <a href="#">SUBJECT2</a>
-            <a href="#">SUBJECT3</a>
-            <a href="#">SUBJECT4</a>
-            <a href="#" id="add-article-link" class="add-article-link">ADD ARTICLE</a>
+            <a href="#" class="category-filter" data-category="POLITICS">POLITICS</a>
+            <a href="#" class="category-filter" data-category="SUBJECT2">SUBJECT2</a>
+            <a href="#" class="category-filter" data-category="SUBJECT3">SUBJECT3</a>
+            <a href="#" class="category-filter" data-category="SUBJECT4">SUBJECT4</a>
+            <a href="#" id="add-article-link">ADD ARTICLE</a>
         </div>
 
+        <!-- modal -->
         <div id="article-modal" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
@@ -70,40 +74,37 @@
             </div>
         </div>
 
-        <!-- firebase sdk -->
+        <!-- Firebase SDK -->
         <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
         <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
         <script src="firebase-config.js"></script>
 
-        <a href="#" class="title" data-category="all">
-            <h1 align="center">The Dialectic</h1>
-        </a>
-        
-        <div class="navbar" align="center">
-            <hr class="bighr">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="#" class="category-filter" data-category="POLITICS">POLITICS</a>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="#" class="category-filter" data-category="SUBJECT2">SUBJECT2</a>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="#" class="category-filter" data-category="SUBJECT3">SUBJECT3</a>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="#" class="category-filter" data-category="SUBJECT4">SUBJECT4</a>
-            &nbsp;
-            <hr class = "bighr">
-        </div>
 
-        <!-- top 7 most recent articles from database -->
-        <div class="articles">
-            <div class="recent-articles-column" id="recent-articles-container">
-            </div>
         
-        <!-- the rest of the articles should be small like these -->
-            <div class="small-articles-column" id="older-articles-container">
+
+        <!-- articles -->
+        <div class="article-container">
+            <div class="article-header">
+                <p id="article-category" class="article-category">Category</p>
+                <h1 id="article-title" class="article-title">Loading...</h1>
+                <div class="article-meta">
+                    <p id="article-author" class="article-author">By Author</p>
+                    <p id="article-date" class="article-date">Date</p>
+                </div>
+                <p id="article-description" class="article-description"></p>
+
+            </div>
+            
+            <div class="article-image-container">
+                <img id="article-image" src="" alt="Article Image" class="article-image">
+            </div>
+            
+            <div class="article-body">
+                <div id="article-content" class="article-content"></div>
             </div>
         </div>
 
         <hr>
-        <script src="script.js"></script>
+        <script src="article.js"></script>
     </body>
 </html>

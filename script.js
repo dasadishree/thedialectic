@@ -85,21 +85,49 @@ function displayArticles(articles) {
         return;
     }
     
-    // top 5 most recent articles in large format
-    const recentArticles = articles.slice(0, 5);
-    recentArticles.forEach(article => {
+    // calculate big and small (prob dindt need to hardcode it but im lazy to fix it)
+    let bigCount, smallCount;
+    
+    if (articles.length === 1) {
+        bigCount = 1;
+        smallCount = 0;
+    } else if (articles.length === 2) {
+        bigCount = 1;
+        smallCount = 1;
+    } else if (articles.length === 3) {
+        bigCount = 2;
+        smallCount = 1;
+    } else if (articles.length === 4) {
+        bigCount = 2;
+        smallCount = 2;
+    } else if (articles.length === 5) {
+        bigCount = 3;
+        smallCount = 2;
+    } else if (articles.length === 6) {
+        bigCount = 3;
+        smallCount = 3;
+    } else if (articles.length === 7) {
+        bigCount = 4;
+        smallCount = 3;
+    } else {
+        bigCount = Math.ceil(articles.length / 2);
+        smallCount = Math.floor(articles.length / 2);
+    }
+    
+    //  big articles
+    const bigArticles = articles.slice(0, bigCount);
+    bigArticles.forEach(article => {
         const articleElement = createRecentArticleElement(article);
         recentContainer.appendChild(articleElement);
     });
     
-    // Display remaining articles in small format
-    const olderArticles = articles.slice(5);
-    olderArticles.forEach((article, index) => {
+    //  small articles
+    const smallArticles = articles.slice(bigCount);
+    smallArticles.forEach((article, index) => {
         const articleElement = createSmallArticleElement(article);
         olderContainer.appendChild(articleElement);
         
-        // Add horizontal line between articles (except after the last one)
-        if (index < olderArticles.length - 1) {
+        if (index < smallArticles.length - 1) {
             const hr = document.createElement('hr');
             olderContainer.appendChild(hr);
         }
@@ -110,6 +138,7 @@ function displayArticles(articles) {
 function createRecentArticleElement(article) {
     const articleDiv = document.createElement('div');
     articleDiv.className = 'recentDiv';
+    articleDiv.style.cursor = 'pointer';
     
     articleDiv.innerHTML = `
         <div class="recentText">
@@ -123,6 +152,11 @@ function createRecentArticleElement(article) {
         <div class="vertical-line"></div>
     `;
     
+    // Make article clickable
+    articleDiv.addEventListener('click', function() {
+        window.location.href = `article.html?id=${article.id}`;
+    });
+    
     return articleDiv;
 }
 
@@ -130,6 +164,7 @@ function createRecentArticleElement(article) {
 function createSmallArticleElement(article) {
     const articleDiv = document.createElement('div');
     articleDiv.className = 'smallDiv';
+    articleDiv.style.cursor = 'pointer';
     
     articleDiv.innerHTML = `
         <div class="smallText">
@@ -140,6 +175,11 @@ function createSmallArticleElement(article) {
         </div>
         <img src="${article.imageUrl}" alt="${article.headline}" onerror="this.src='img.jpg'">
     `;
+    
+    // Make article clickable
+    articleDiv.addEventListener('click', function() {
+        window.location.href = `article.html?id=${article.id}`;
+    });
     
     return articleDiv;
 }
